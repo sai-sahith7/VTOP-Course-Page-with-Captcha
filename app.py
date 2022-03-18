@@ -154,6 +154,7 @@ def main_app():
         password = request.form["password"]
         sem_code = request.form["sem_code"]
         res = get_complete_data(reg_no,password,sem_code)
+        return res
         return render_template("index.html",res=res,reg_no=reg_no)
     else:
         return render_template("index.html")
