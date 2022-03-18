@@ -77,8 +77,6 @@ def get_complete_data(reg_no,vtop_password,sem_code):
     time.sleep(2) #trying to avoid recaptcha
     wait.until(ec.element_to_be_clickable((By.ID, "captcha"))).click()
     #until sign in end
-    time.sleep(2)
-    return driver.page_source #tring to debug
     # time table
     data = {}
     wait.until(ec.element_to_be_clickable((By.XPATH, '//*[@id="menu-toggle"]'))).click()  # clicking on menu button
@@ -154,7 +152,6 @@ def main_app():
         password = request.form["password"]
         sem_code = request.form["sem_code"]
         res = get_complete_data(reg_no,password,sem_code)
-        return res
         return render_template("index.html",res=res,reg_no=reg_no)
     else:
         return render_template("index.html")
