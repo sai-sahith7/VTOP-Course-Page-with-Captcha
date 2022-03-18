@@ -74,6 +74,7 @@ def get_complete_data(reg_no,vtop_password,sem_code):
         pass
     username.send_keys(reg_no)
     password.send_keys(vtop_password)
+    time.sleep(3) #trying to avoid recaptcha
     signinbn.click()
     #until sign in end
     print(driver.page_source) #tring to debug
