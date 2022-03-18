@@ -76,6 +76,7 @@ def get_complete_data(reg_no,vtop_password,sem_code):
     password.send_keys(vtop_password)
     signinbn.click()
     #until sign in end
+    print(driver.page_source) #tring to debug
     # time table
     data = {}
     wait.until(ec.element_to_be_clickable((By.XPATH, '//*[@id="menu-toggle"]'))).click()  # clicking on menu button
