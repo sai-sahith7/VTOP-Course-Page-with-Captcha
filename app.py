@@ -70,6 +70,9 @@ def get_complete_data(reg_no,vtop_password,sem_code):
         decoded_captcha = get_captcha(driver.find_element(By.XPATH, '//img[@alt="vtopCaptcha"]').get_attribute("src"))
         captcha = wait.until(ec.element_to_be_clickable((By.ID, "captchaCheck")))
         captcha.send_keys(decoded_captcha)
+        print("*******************")
+        print(decoded_captcha)
+        print("*******************")
     except:
         pass
     username.send_keys(reg_no)
