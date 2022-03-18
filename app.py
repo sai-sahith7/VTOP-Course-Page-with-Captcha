@@ -74,12 +74,12 @@ def get_complete_data(reg_no,vtop_password,sem_code):
         pass
     wait.until(ec.element_to_be_clickable((By.ID, "uname"))).send_keys(reg_no)
     wait.until(ec.element_to_be_clickable((By.ID, "passwd"))).send_keys(vtop_password)
-    time.sleep(2) #trying to avoid recaptcha
+    time.sleep(1) #trying to avoid recaptcha
     wait.until(ec.element_to_be_clickable((By.ID, "captcha"))).click()
     #until sign in end
     # time table
     data = {}
-    time.sleep(2)
+    time.sleep(1.5)
     wait.until(ec.element_to_be_clickable((By.XPATH, '//*[@id="menu-toggle"]'))).click()  # clicking on menu button
     wait.until(ec.element_to_be_clickable((By.XPATH, '//a[@href="#MenuBody6"]'))).click()  # clicking on academics
     wait.until(ec.element_to_be_clickable((By.XPATH, '//*[@id="ACD0034"]'))).click()  # clicking on time table
