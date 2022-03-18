@@ -72,10 +72,10 @@ def get_complete_data(reg_no,vtop_password,sem_code):
         captcha.send_keys(decoded_captcha)
     except:
         pass
-    username.send_keys(reg_no)
-    password.send_keys(vtop_password)
+    wait.until(ec.element_to_be_clickable((By.ID, "uname"))).send_keys(reg_no)
+    wait.until(ec.element_to_be_clickable((By.ID, "passwd"))).send_keys(vtop_password)
     time.sleep(3) #trying to avoid recaptcha
-    signinbn.click()
+    wait.until(ec.element_to_be_clickable((By.ID, "captcha"))).click()
     #until sign in end
     print(driver.page_source) #tring to debug
     # time table
