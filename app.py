@@ -74,10 +74,11 @@ def get_complete_data(reg_no,vtop_password,sem_code):
         pass
     wait.until(ec.element_to_be_clickable((By.ID, "uname"))).send_keys(reg_no)
     wait.until(ec.element_to_be_clickable((By.ID, "passwd"))).send_keys(vtop_password)
-    time.sleep(3) #trying to avoid recaptcha
+    time.sleep(2) #trying to avoid recaptcha
     wait.until(ec.element_to_be_clickable((By.ID, "captcha"))).click()
     #until sign in end
-    print(driver.page_source) #tring to debug
+    time.sleep(2)
+    return driver.page_source #tring to debug
     # time table
     data = {}
     wait.until(ec.element_to_be_clickable((By.XPATH, '//*[@id="menu-toggle"]'))).click()  # clicking on menu button
