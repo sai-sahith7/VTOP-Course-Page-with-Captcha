@@ -68,8 +68,11 @@ def change_link(initial_link,reg_no):
 def get_time_table_data(reg_no,vtop_password,sem_code):
     # **** until sign in ****
     ext = webdriver.ChromeOptions()
+    ext.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     ext.add_argument("--headless")
-    driver = webdriver.Chrome(options=ext)
+    ext.add_argument("--no-sandbox")
+    ext.add_argument("--disable-dev-sh-usage")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),chrome_options=ext)
     wait = WebDriverWait(driver, 20)
     wait1 = WebDriverWait(driver, 2)
     wait2 = WebDriverWait(driver, 0.5)
@@ -132,8 +135,11 @@ def get_course_page(reg_no,vtop_password,sem_code,course_details,class_number):
 
     # **** until sign in ****
     ext = webdriver.ChromeOptions()
+    ext.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     ext.add_argument("--headless")
-    driver = webdriver.Chrome(options=ext)
+    ext.add_argument("--no-sandbox")
+    ext.add_argument("--disable-dev-sh-usage")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),chrome_options=ext)
     wait = WebDriverWait(driver, 20)
     wait1 = WebDriverWait(driver, 2)
     wait2 = WebDriverWait(driver, 0.5)
