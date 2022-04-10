@@ -279,6 +279,7 @@ def main_app():
 @app.route("/enroll",methods=["POST","GET"])
 def enroll():
     if request.method == "POST":
+        print("This worked idk why")
         reg_no = request.form["reg_no"]
         password = request.form["password"]
         sem_code = request.form["sem_code"]
