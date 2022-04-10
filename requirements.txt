@@ -60,3 +60,4 @@ urllib3==1.26.8
 Werkzeug==2.0.3
 wsproto==1.1.0
 yarg==0.1.9
+Pyrebase==3.0.27
